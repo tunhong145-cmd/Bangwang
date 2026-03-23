@@ -129,37 +129,42 @@
             <p style="text-align:center; color:#ccc; margin-top:-15px; margin-bottom:20px; font-size:14px;">(下單後專人電話聯繫確認地址)</p>
             <p style="text-align:center; color:#fbc02d; font-weight:bold; font-size:18px; margin-bottom:25px;">特惠價：1398 TWD / 瓶</p>
             
-            <form id="orderForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe-sv68p-RQzX3I_pE6oNst3Y7P0Gv9-p3gN3fX1X8X1X8X1A/formResponse" method="POST" target="hidden_iframe">
-    <div class="input-group">
-        <label>收貨人姓名：</label>
-        <input type="text" id="custName" name="entry.684888068" placeholder="請填寫您的真實繁體中文姓名" required>
-    </div>
+           <form id="orderForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe-sv68p-RQzX3I_pE6oNst3Y7P0Gv9-p3gN3fX1X8X1X8X1A/formResponse" method="POST" target="hidden_iframe">
+                <div class="input-group">
+                    <label>收貨人姓名：</label>
+                    <input type="text" id="custName" name="entry.684888068" placeholder="請填寫您的真實繁體中文姓名" required>
+                </div>
 
-    <div class="input-group">
-        <label>聯繫電話：</label>
-        <div class="phone-container">
-            <span class="prefix">+886</span>
-            <input type="tel" id="userPhone" placeholder="請填寫您的手機號" required>
+                <div class="input-group">
+                    <label>聯繫電話：</label>
+                    <div class="phone-container">
+                        <span class="prefix">+886</span>
+                        <input type="tel" id="userPhone" placeholder="請填寫您的手機號" required>
+                    </div>
+                    <input type="hidden" id="fullPhone" name="entry.385434363">
+                </div>
+
+                <div style="margin-bottom: 20px; font-size: 14px; color: #ddd;">
+                    註：我們將採用保密包裝，面單不顯示任何產品名稱，貨到付款，安全無憂。
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    立即提交訂單 (專人電話確認後發貨)
+                    <span class="btn-subtext" style="font-size:14px; font-weight:normal;">確認地址後即刻發貨</span>
+                </button>
+            </form>
         </div>
-        <input type="hidden" id="fullPhone" name="entry.385434363">
     </div>
+</div>
 
-    <div style="margin-bottom: 20px; font-size: 14px; color: #ddd;">
-        註：我們將採用保密包裝，面單不顯示任何產品名稱，貨到付款，安全無憂。
-    </div>
-    <button type="submit" class="submit-btn">
-        立即提交訂單 (專人電話確認後發貨)
-        <span class="btn-subtext" style="font-size:14px; font-weight:normal;">確認地址後即刻發貨</span>
-    </button>
-</form>
+<a href="#order-form" id="floating-btn">立即搶購</a>
 
-<script type="text/javascript">var submitted=false;</script>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){alert('恭喜您下單成功！我們將儘快與您聯繫確認訂單，請保持電話暢通。');window.location.reload();}"></iframe>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleIframeLoad()"></iframe>
 
 <script>
+    // 初始化日期
     document.getElementById('date').innerText = new Date().toLocaleDateString();
     
-    // 倒計時
+    // 倒計時邏輯
     let time = 900;
     const timerDisplay = document.getElementById('countdown');
     setInterval(() => {
@@ -170,7 +175,7 @@
         if (time > 0) time--;
     }, 1000);
 
-    // 滾動列表
+    // 滾動訂單列表
     const scrollList = document.getElementById('scroll-list');
     setInterval(() => {
         if (scrollList && scrollList.children.length > 1) {
@@ -178,13 +183,23 @@
         }
     }, 3000);
 
-    // 懸浮按鈕跳轉
+    // 懸浮按鈕平滑跳轉
     document.getElementById('floating-btn').addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector('#order-form').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // 表單提交處理邏輯
+    // --- 關鍵：表單提交與回饋邏輯 ---
+    var isSubmitting = false;
+
+    function handleIframeLoad() {
+        if (isSubmitting) {
+            alert('恭喜您下單成功！我們將儘快與您聯繫確認訂單，請保持電話暢通。');
+            isSubmitting = false;
+            window.location.reload(); // 提交成功後刷新頁面清空數據
+        }
+    }
+
     document.getElementById('orderForm').onsubmit = function() {
         const nameInput = document.getElementById('custName');
         const phoneInput = document.getElementById('userPhone');
@@ -198,16 +213,19 @@
             return false;
         }
 
-        // 2. 電話區號合併邏輯 (台灣格式優化)
+        // 2. 電話合併邏輯
         let rawPhone = phoneInput.value.trim();
         if (rawPhone.startsWith('0')) {
             rawPhone = rawPhone.substring(1);
         }
         fullPhoneHidden.value = '+886' + rawPhone;
+
+        // 3. 設置狀態，準備接收 iframe 反饋
+        isSubmitting = true;
+        document.getElementById('submitBtn').innerText = "提交中...";
+        document.getElementById('submitBtn').disabled = true;
         
-        // 3. 標記提交狀態，觸發彈窗
-        submitted = true;
-        return true;
+        return true; // 正式提交到 Google 表單
     };
 </script>
 
