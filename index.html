@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>【男性健康特刊】霸王養精蓄力丹：重燃男兒本色，找回巔峰自信！</title>
+    <style>
+        body { font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif; margin: 0; padding: 0; background: #fdfdfd; color: #333; line-height: 1.8; padding-bottom: 80px; /* 为悬浮按钮留出空间 */ }
+        .header { background: #d32f2f; color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 19px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding-bottom: 50px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        .content { padding: 20px; }
+        
+        h1 { font-size: 26px; color: #111; line-height: 1.4; margin-bottom: 12px; }
+        .meta { color: #888; font-size: 13px; margin-bottom: 25px; border-bottom: 1px dashed #eee; padding-bottom: 15px; }
+        .highlight { background: #fff176; color: #c62828; font-weight: bold; padding: 3px 6px; border-radius: 2px; }
+        .strong-text { color: #c62828; font-size: 22px; font-weight: bold; }
+        
+        .product-img { width: 100%; display: block; margin: 25px 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .compare-img { width: 100%; display: block; margin: 20px 0; border-radius: 8px; border: 1px solid #ddd; }
+        .trust-img { width: 45%; max-width: 150px; display: block; margin: 20px auto; }
+
+        /* 核心痛点 */
+        .pain-points { background: #fffde7; border-left: 6px solid #fbc02d; padding: 15px; margin: 20px 0; font-style: italic; font-size: 17px; }
+        
+        /* 故事区域样式 */
+        .story-section { background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 30px 0; border: 1px solid #eee; }
+        .story-title { text-align: center; color: #333; font-size: 22px; font-weight: bold; margin-bottom: 25px; }
+        .story-item { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; display: flex; align-items: flex-start; }
+        .story-item:last-child { border-bottom: none; }
+        .story-avatar { width: 70px; height: 70px; border-radius: 50%; margin-right: 18px; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; }
+        .story-content { flex: 1; }
+        .story-name { font-weight: bold; color: #555; font-size: 16px; display: flex; align-items: center; }
+        .story-text { font-size: 15px; color: #444; margin-top: 5px; font-style: italic; }
+        .story-tag { background: #e0f2f1; color: #00796b; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 10px; }
+
+        /* 功效列表 */
+        .feature-list { list-style-type: none; padding: 0; margin: 20px 0; }
+        .feature-list li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z" fill="%23fbc02d"/></svg>') no-repeat left center; background-size: 24px; padding-left: 35px; margin-bottom: 12px; font-size: 18px; font-weight: bold; color: #d32f2f; }
+        
+        /* 实时滚动 */
+        #scroll-box { height: 35px; overflow: hidden; background: #e0f2f1; border-radius: 20px; margin: 20px 0; padding: 6px 18px; font-size: 14px; color: #00796b; }
+        
+        /* 价格区域 */
+        .price-tag { text-align: center; margin: 30px 0 10px 0; padding: 15px; background: #fff5f5; border-radius: 8px; border: 1px solid #ffcdd2; }
+        .original-price { color: #888; text-decoration: line-through; font-size: 16px; margin-right: 15px; }
+        .current-price { color: #d32f2f; font-size: 32px; font-weight: bold; }
+        .price-unit { font-size: 18px; }
+
+        /* 倒计时 */
+        .timer-container { text-align: center; font-size: 16px; margin: 10px 0 20px 0; background: #fafafa; padding: 10px; border-radius: 5px; }
+        .timer { color: #d32f2f; font-weight: bold; font-size: 20px; }
+
+        /* 订单表单区 */
+        .order-area { background: #1a1a1a; color: #fff; padding: 30px 20px; margin: 0 10px 30px 10px; border-radius: 15px; border: 3px solid #fbc02d; scroll-margin-top: 20px; /* 悬浮按钮跳转锚点优化 */ }
+        .order-title { text-align: center; color: #fbc02d; margin-bottom: 25px; font-size: 24px; font-weight: bold; }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; color: #ddd; font-weight: bold; }
+        .input-group input { width: 100%; height: 50px; border: none; border-radius: 8px; padding-left: 15px; box-sizing: border-box; font-size: 18px; background: rgba(255,255,255,0.9); }
+        
+        .submit-btn { width: 100%; height: 65px; background: linear-gradient(180deg, #ff7043, #d32f2f); color: white; border: none; border-radius: 8px; font-size: 22px; font-weight: bold; cursor: pointer; animation: pulse 1.5s infinite; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
+        .submit-btn:hover { background: linear-gradient(180deg, #d32f2f, #ff7043); transform: scale(1.02); }
+        .btn-subtext { font-size: 14px; font-weight: normal; opacity: 0.9; margin-top: 2px; }
+        
+        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211,47,47, 0.7); } 50% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(211,47,47, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211,47,47, 0); } }
+
+        /* 悬浮订购按钮 */
+        #floating-btn { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 18px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 1000; animation: bounce 2s infinite; text-decoration: none; display: flex; align-items: center; }
+        #floating-btn svg { margin-right: 8px; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+
+    </style>
+</head>
+<body>
+
+<div class="header">🔥 台灣男性健康特刊：限量免費領取通道</div>
+
+<div class="container">
+    <div class="content">
+        <img src="hero.png" alt="霸王養精蓄力丹" class="product-img">
+
+        <h1>【獨家專訪】告別「力不從心」的尷尬！這款被封為「霸王」的秘方，竟讓中年男人重回巅峰？</h1>
+        <div class="meta">發布時間：<span id="date"></span> | 閱讀 10万+ | 責任編輯：男性健康觀察家</div>
+
+        <p>很多台灣男性在過了 35 歲後，常會感到<span class="highlight">腰膝酸软、精力大不如前，关键时刻更是总是「力不從心」？</span> 现代生活的压力和不规律的饮食，让生理机能提早退化，这不仅是尊严问题，更是家庭和谐的最大隐患！</p>
+
+        <div class="pain-points">
+            “別再試那些沒有用的西藥了，那只會更透支你的身體！你真正需要的是「源头补给」！”
+        </div>
+
+        <div class="story-section">
+            <h3 class="story-title">⭐⭐⭐⭐⭐ 台灣實測：找回尊嚴的故事 ⭐⭐⭐⭐⭐</h3>
+            
+            <div class="story-item">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'><rect width='70' height='70' fill='%23ddd' border='2px solid %23fff'/><text x='50%' y='50%' font-family='sans-serif' font-size='16' text-anchor='middle' dy='.3em' fill='%23666'>王先生</text></svg>" alt="王先生" class="story-avatar">
+                <div class="story-content">
+                    <div class="story-name">新北市 王先生 (45歲) <span class="story-tag">親測有效</span></div>
+                    <p class="story-text">「以前总是‘缴械’太快，老婆看我的眼神都不对了。试了‘霸王丹’第一周，简直不敢相信！不仅找回了20岁的冲劲，现在掌控节奏随心所欲，连战三局都不累！老婆现在对我温柔得不得了！」</p>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'><rect width='70' height='70' fill='%23e0f2f1' border='2px solid %23fff'/><text x='50%' y='50%' font-family='sans-serif' font-size='16' text-anchor='middle' dy='.3em' fill='%2300796b'>林先生</text></svg>" alt="林先生" class="story-avatar">
+                <div class="story-content">
+                    <div class="story-name">高雄市 林先生 (38歲) <span class="story-tag">全面提升</span></div>
+                    <p class="story-text">「工作压力大，每天回家倒头就睡，那方面完全没想法。朋友推荐了这个古法秘方，服用后不仅精力充沛，整个人从内而外透着一股劲儿！现在每次都让老婆求饶，真的太神了！」</p>
+                </div>
+            </div>
+        </div>
+
+        <p>【霸王養精蓄力丹】不仅是短期提神，更是深层滋补，找回你失落已久的尊严！</p>
+
+        <img src="compare.png" alt="前後變化示意圖" class="compare-img">
+
+        <ul class="feature-list">
+            <li>瞬間激發动力，拒绝等待！</li>
+            <li>持久稳固，掌控节奏，更长久！</li>
+            <li>源头补给，告别透支，找回自信！</li>
+        </ul>
+
+        <img src="trust.png" alt="安全認證標誌" class="trust-img">
+
+        <hr>
+
+        <div id="scroll-box">
+            <ul id="scroll-list" style="list-style:none; margin:0; padding:0;">
+                <li>王** (093****567) 5分鐘前申请成功</li>
+                <li>林** (091****223) 2分鐘前下单成功</li>
+                <li>張** (098****009) 剛剛申请咨询</li>
+            </ul>
+        </div>
+
+        <div class="price-tag">
+            <span class="original-price">原價: 2778 TWD</span>
+            <span class="current-price">現價: 1398 <span class="price-unit">TWD</span></span>
+        </div>
+
+        <div class="timer-container">限時特惠僅剩：<span class="timer" id="countdown">15:00</span></div>
+
+        <div class="order-area" id="order-form">
+            <h2 class="order-title">—— 貨到付款 · 隱私發貨 ——</h2>
+            <p style="text-align:center; color:#ccc; margin-top:-15px; margin-bottom:20px; font-size:14px;">(下单后专人电话联系确认地址)</p>
+            
+            <form action="YOUR_GOOGLE_FORM_POST_URL" method="POST">
+                <div class="input-group">
+                    <label>收貨人姓名：</label>
+                    <input type="text" name="entry.12345678" placeholder="請填寫您的真實姓名" required>
+                </div>
+                <div class="input-group">
+                    <label>聯繫電話：</label>
+                    <input type="tel" name="entry.87654321" placeholder="請填寫您的手机号" required pattern="[0-9]{10}">
+                </div>
+                <div style="margin-bottom: 20px; font-size: 14px; color: #ddd;">
+                    注：我们将采用保密包装，面单不显示任何产品名称，货到付款，安全无忧。
+                </div>
+                <button type="submit" class="submit-btn">
+                    立即提交申请 (免費領取)
+                    <span class="btn-subtext">专人电话确认后发货</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<a href="#order-form" id="floating-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg>
+    立即搶購
+</a>
+
+<script>
+    // 自动更新日期
+    document.getElementById('date').innerText = new Date().toLocaleDateString();
+
+    // 简单倒计时逻辑 (15分钟)
+    let time = 900;
+    const timerDisplay = document.getElementById('countdown');
+    setInterval(() => {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        timerDisplay.innerHTML = `${minutes}:${seconds}`;
+        if (time > 0) time--;
+    }, 1000);
+
+    // 模拟滚动记录
+    const scrollList = document.getElementById('scroll-list');
+    setInterval(() => {
+        if (scrollList.children.length > 1) {
+            scrollList.appendChild(scrollList.firstElementChild);
+        }
+    }, 3000);
+
+    // 悬浮按钮平滑滚动逻辑
+    document.getElementById('floating-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#order-form').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+</body>
+</html>
