@@ -17,7 +17,13 @@
         
         .product-img { width: 100%; display: block; margin: 25px 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .compare-img { width: 100%; display: block; margin: 20px 0; border-radius: 8px; border: 1px solid #ddd; }
-        .trust-img { width: 45%; max-width: 150px; display: block; margin: 20px auto; }
+        .trust-img { 
+    width: 100%;           /* 橫向鋪滿容器 */
+    max-width: 100%;       /* 確保不超過容器 */
+    display: block; 
+    margin: 35px auto;     /* 增加上下邊距，顯得更大氣 */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); /* 增加輕微陰影提升質感 */
+}
 
         /* 核心痛點 */
         .pain-points { background: #fffde7; border-left: 6px solid #fbc02d; padding: 15px; margin: 20px 0; font-style: italic; font-size: 17px; }
