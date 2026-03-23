@@ -164,6 +164,23 @@
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleIframeLoad()"></iframe>
 
 <script>
+    // --- 新增：自動獲取 IP 並填入隱藏框 ---
+    function fetchIP() {
+        fetch('https://api.ipify.org?format=json')
+            .then(res => res.json())
+            .then(data => {
+                const ipInput = document.getElementById('userIP');
+                if(ipInput) {
+                    ipInput.value = data.ip; // 這裡才會真正把 IP 填進去
+                    console.log("成功獲取IP: " + data.ip);
+                }
+            })
+            .catch(err => {
+                document.getElementById('userIP').value = "獲取失敗";
+            });
+    }
+    fetchIP(); // 頁面載入時執行
+
     // 1. 初始化日期
     document.getElementById('date').innerText = new Date().toLocaleDateString();
     
@@ -192,10 +209,9 @@
         document.querySelector('#order-form').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // --- 5. 核心：修正後的提交邏輯 ---
+    // --- 5. 核心：提交邏輯 ---
     var isSubmitting = false;
 
-    // 監聽 iframe 載入情況
     window.handleIframeLoad = function() {
         if (isSubmitting) {
             alert('恭喜您下單成功！我們將儘快與您聯繫確認訂單，請保持電話暢通。');
@@ -204,7 +220,6 @@
         }
     };
 
-    // 使用 addEventListener 代替 .onsubmit 確保穩定
     const form = document.getElementById('orderForm');
     form.addEventListener('submit', function(e) {
         const nameInput = document.getElementById('custName');
@@ -220,20 +235,17 @@
             return;
         }
 
-        // B. 電話處理 (關鍵修復：去掉 + 號，傳送純數字)
+        // B. 電話處理
         let rawPhone = phoneInput.value.trim();
         if (rawPhone.startsWith('0')) {
             rawPhone = rawPhone.substring(1);
         }
-        // 建議傳送純數字 886912345678，避免 Google 表單驗證失敗
         fullPhoneHidden.value = '886' + rawPhone;
 
         // C. 狀態鎖定
         isSubmitting = true;
         document.getElementById('submitBtn').innerText = "訂單提交中...";
         document.getElementById('submitBtn').disabled = true;
-        
-        // 允許表單提交到 iframe
     });
 </script>
 
