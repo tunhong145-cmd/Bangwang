@@ -129,29 +129,31 @@
             <p style="text-align:center; color:#ccc; margin-top:-15px; margin-bottom:20px; font-size:14px;">(下單後專人電話聯繫確認地址)</p>
             <p style="text-align:center; color:#fbc02d; font-weight:bold; font-size:18px; margin-bottom:25px;">特惠價：1398 TWD / 瓶</p>
             
-           <form id="orderForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe-sv68p-RF9rzBHcrAAPkjUJXxqdOEms7LxG-7kFTvvBoOQg/formResponse" method="POST" target="hidden_iframe">
-                <div class="input-group">
-                    <label>收貨人姓名：</label>
-                    <input type="text" id="custName" name="entry.684888068" placeholder="請填寫您的真實繁體中文姓名" required>
-                </div>
+          <form id="orderForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe-sv68p-RF9rzBHcrAAPkjUJXxqdOEms7LxG-7kFTvvBoOQg/formResponse" method="POST" target="hidden_iframe">
+    
+    <div class="input-group">
+        <label>收貨人姓名：</label>
+        <input type="text" id="custName" name="entry.684888068" placeholder="請填寫您的真實繁體中文姓名" required>
+    </div>
 
-                <div class="input-group">
-                    <label>聯繫電話：</label>
-                    <div class="phone-container">
-                        <span class="prefix">+886</span>
-                        <input type="tel" id="userPhone" placeholder="請填寫您的手機號" required>
-                    </div>
-                    <input type="hidden" id="fullPhone" name="entry.385434363">
-                </div>
+    <div class="input-group">
+        <label>聯繫電話：</label>
+        <div class="phone-container">
+            <span class="prefix">+886</span>
+            <input type="tel" id="userPhone" placeholder="請填寫您的手機號" required>
+        </div>
+        <input type="hidden" id="fullPhone" name="entry.385434363">
+    </div>
 
-                <div style="margin-bottom: 20px; font-size: 14px; color: #ddd;">
-                    註：我們將採用保密包裝，面單不顯示任何產品名稱，貨到付款，安全無憂。
-                </div>
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    立即提交訂單 (專人電話確認後發貨)
-                    <span class="btn-subtext" style="font-size:14px; font-weight:normal;">確認地址後即刻發貨</span>
-                </button>
-            </form>
+    <div style="margin-bottom: 20px; font-size: 14px; color: #ddd;">
+        註：我們將採用保密包裝，面單不顯示任何產品名稱，貨到付款，安全無憂。
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">
+        立即提交訂單 (專人電話確認後發貨)
+        <span class="btn-subtext" style="font-size:14px; font-weight:normal;">確認地址後即刻發貨</span>
+    </button>
+</form>
         </div>
     </div>
 </div>
