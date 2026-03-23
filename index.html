@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+    <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2363729687464860');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" 
+       src="https://www.facebook.com/tr?id=2363729687464860&ev=PageView&noscript=1"/>
+</noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>【男性健康特刊】霸王養精蓄力丹：重燃男兒本色，找回巔峰自信！</title>
@@ -216,6 +232,9 @@
 
     window.handleIframeLoad = function() {
         if (isSubmitting) {
+            // --- 新增：向 Facebook 發送購買事件 ---
+            fbq('track', 'Purchase', {value: 1398, currency: 'TWD'}); 
+            
             alert('恭喜您下單成功！我們將儘快與您聯繫確認訂單，請保持電話暢通。');
             isSubmitting = false;
             location.reload(); 
