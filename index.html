@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>【男性健康特刊】霸王養精蓄力丹：重燃男兒本色，找回巔峰自信！</title>
     <style>
-        body { font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif; margin: 0; padding: 0; background: #fdfdfd; color: #333; line-height: 1.8; padding-bottom: 80px; /* 為懸浮按鈕留出空間 */ }
+        body { font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif; margin: 0; padding: 0; background: #fdfdfd; color: #333; line-height: 1.8; padding-bottom: 80px; }
         .header { background: #d32f2f; color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 19px; }
         .container { max-width: 600px; margin: 0 auto; background: white; padding-bottom: 50px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
         .content { padding: 20px; }
@@ -13,68 +13,53 @@
         h1 { font-size: 26px; color: #111; line-height: 1.4; margin-bottom: 12px; }
         .meta { color: #888; font-size: 13px; margin-bottom: 25px; border-bottom: 1px dashed #eee; padding-bottom: 15px; }
         .highlight { background: #fff176; color: #c62828; font-weight: bold; padding: 3px 6px; border-radius: 2px; }
-        .strong-text { color: #c62828; font-size: 22px; font-weight: bold; }
         
         .product-img { width: 100%; display: block; margin: 25px 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .compare-img { width: 100%; display: block; margin: 20px 0; border-radius: 8px; border: 1px solid #ddd; }
-        .trust-img { 
-    width: 100%;           /* 橫向鋪滿容器 */
-    max-width: 100%;       /* 確保不超過容器 */
-    display: block; 
-    margin: 35px auto;     /* 增加上下邊距，顯得更大氣 */
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); /* 增加輕微陰影提升質感 */
-}
+        .trust-img { width: 100%; display: block; margin: 35px auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.08)); }
 
-        /* 核心痛點 */
         .pain-points { background: #fffde7; border-left: 6px solid #fbc02d; padding: 15px; margin: 20px 0; font-style: italic; font-size: 17px; }
         
-        /* 故事區域樣式 */
+        /* 故事區域 */
         .story-section { background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 30px 0; border: 1px solid #eee; }
         .story-title { text-align: center; color: #333; font-size: 22px; font-weight: bold; margin-bottom: 25px; }
         .story-item { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; display: flex; align-items: flex-start; }
-        .story-item:last-child { border-bottom: none; }
-        /* 更新：調取 wang.png 和 lin.png */
         .story-avatar { width: 70px; height: 70px; border-radius: 50%; margin-right: 18px; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; object-fit: cover; }
         .story-content { flex: 1; }
-        .story-name { font-weight: bold; color: #555; font-size: 16px; display: flex; align-items: center; }
+        .story-name { font-weight: bold; color: #555; font-size: 16px; }
         .story-text { font-size: 15px; color: #444; margin-top: 5px; font-style: italic; }
         .story-tag { background: #e0f2f1; color: #00796b; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 10px; }
 
-        /* 功效列表 */
         .feature-list { list-style-type: none; padding: 0; margin: 20px 0; }
         .feature-list li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z" fill="%23fbc02d"/></svg>') no-repeat left center; background-size: 24px; padding-left: 35px; margin-bottom: 12px; font-size: 18px; font-weight: bold; color: #d32f2f; }
         
-        /* 實時滾動 */
         #scroll-box { height: 35px; overflow: hidden; background: #e0f2f1; border-radius: 20px; margin: 20px 0; padding: 6px 18px; font-size: 14px; color: #00796b; }
         
-        /* 價格區域 */
         .price-tag { text-align: center; margin: 30px 0 10px 0; padding: 15px; background: #fff5f5; border-radius: 8px; border: 1px solid #ffcdd2; }
         .original-price { color: #888; text-decoration: line-through; font-size: 16px; margin-right: 15px; }
         .current-price { color: #d32f2f; font-size: 32px; font-weight: bold; }
-        .price-unit { font-size: 18px; }
 
-        /* 倒計時 */
         .timer-container { text-align: center; font-size: 16px; margin: 10px 0 20px 0; background: #fafafa; padding: 10px; border-radius: 5px; }
         .timer { color: #d32f2f; font-weight: bold; font-size: 20px; }
 
         /* 訂單表單區 */
-        .order-area { background: #1a1a1a; color: #fff; padding: 30px 20px; margin: 0 10px 30px 10px; border-radius: 15px; border: 3px solid #fbc02d; scroll-margin-top: 20px; /* 懸浮按鈕跳轉錨點優化 */ }
+        .order-area { background: #1a1a1a; color: #fff; padding: 30px 20px; margin: 0 10px 30px 10px; border-radius: 15px; border: 3px solid #fbc02d; scroll-margin-top: 20px; }
         .order-title { text-align: center; color: #fbc02d; margin-bottom: 25px; font-size: 24px; font-weight: bold; }
         .input-group { margin-bottom: 20px; }
         .input-group label { display: block; margin-bottom: 8px; color: #ddd; font-weight: bold; }
         .input-group input { width: 100%; height: 50px; border: none; border-radius: 8px; padding-left: 15px; box-sizing: border-box; font-size: 18px; background: rgba(255,255,255,0.9); }
         
+        /* 電話輸入框特殊樣式 */
+        .phone-container { display: flex; align-items: center; background: rgba(255,255,255,0.9); border-radius: 8px; overflow: hidden; }
+        .prefix { padding: 0 12px; color: #333; font-weight: bold; font-size: 18px; border-right: 1px solid #ccc; background: #eee; height: 50px; line-height: 50px; }
+        .phone-container input { flex: 1; background: transparent; }
+
         .submit-btn { width: 100%; height: 65px; background: linear-gradient(180deg, #ff7043, #d32f2f); color: white; border: none; border-radius: 8px; font-size: 22px; font-weight: bold; cursor: pointer; animation: pulse 1.5s infinite; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
-        .submit-btn:hover { background: linear-gradient(180deg, #d32f2f, #ff7043); transform: scale(1.02); }
-        .btn-subtext { font-size: 14px; font-weight: normal; opacity: 0.9; margin-top: 2px; }
         
         @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211,47,47, 0.7); } 50% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(211,47,47, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211,47,47, 0); } }
 
-        /* 懸浮訂購按鈕 */
-        #floating-btn { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 18px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 1000; animation: bounce 2s infinite; text-decoration: none; display: flex; align-items: center; }
-        #floating-btn svg { margin-right: 8px; }
+        #floating-btn { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #d32f2f, #b71c1c); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 18px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 1000; animation: bounce 2s infinite; text-decoration: none; }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
-
     </style>
 </head>
 <body>
@@ -96,25 +81,21 @@
 
         <div class="story-section">
             <h3 class="story-title">⭐⭐⭐⭐⭐ 台灣實測：找回尊嚴的故事 ⭐⭐⭐⭐⭐</h3>
-            
             <div class="story-item">
                 <img src="wang.png" alt="王先生" class="story-avatar">
                 <div class="story-content">
                     <div class="story-name">新北市 王先生 (45歲) <span class="story-tag">親測有效</span></div>
-                    <p class="story-text">「以前總是‘繳械’太快，老婆看我的眼神都不對了。試了‘霸王丹’第一週，簡直不敢相信！不僅找回了20歲的衝勁，現在掌控節奏隨心所欲，連戰三局都不累！老婆現在對我溫柔得不得了！」</p>
+                    <p class="story-text">「以前總是‘繳械’太快，老婆看我的眼神都不對了。試了‘霸王丹’第一週，簡直不敢相信！不僅找回了20歲的衝勁，現在掌控節奏隨心所欲，連戰三局都不累！」</p>
                 </div>
             </div>
-
             <div class="story-item">
                 <img src="lin.png" alt="林先生" class="story-avatar">
                 <div class="story-content">
                     <div class="story-name">高雄市 林先生 (38歲) <span class="story-tag">全面提升</span></div>
-                    <p class="story-text">「工作壓力大，每天回家倒頭就睡，那方面完全沒想法。朋友推薦在這個古法秘方，服用後不僅精力充沛，整個人從內而外透著一股勁兒！現在每次都讓老婆求饒，真的太神了！」</p>
+                    <p class="story-text">「工作壓力大，每天回家倒頭就睡。朋友推薦在這個古法秘方，服用後不僅精力充沛，整個人從內而外透著一股勁兒！現在每次都讓老婆求饒，真的太神了！」</p>
                 </div>
             </div>
         </div>
-
-        <p>【霸王養精蓄力丹】不僅是短期提神，更是深層滋補，找回你失落已久的尊嚴！</p>
 
         <img src="compare.png" alt="前後變化示意圖" class="compare-img">
 
@@ -148,15 +129,21 @@
             <p style="text-align:center; color:#ccc; margin-top:-15px; margin-bottom:20px; font-size:14px;">(下單後專人電話聯繫確認地址)</p>
             <p style="text-align:center; color:#fbc02d; font-weight:bold; font-size:18px; margin-bottom:25px;">特惠價：1398 TWD / 瓶</p>
             
-            <form action="YOUR_GOOGLE_FORM_POST_URL" method="POST">
+            <form id="orderForm" action="YOUR_GOOGLE_FORM_POST_URL" method="POST">
                 <div class="input-group">
                     <label>收貨人姓名：</label>
-                    <input type="text" name="entry.12345678" placeholder="請填寫您的真實姓名" required>
+                    <input type="text" id="custName" name="entry.12345678" placeholder="請填寫您的真實繁體中文姓名" required>
                 </div>
+
                 <div class="input-group">
                     <label>聯繫電話：</label>
-                    <input type="tel" name="entry.87654321" placeholder="請填寫您的手機號" required pattern="[0-9]{10}">
+                    <div class="phone-container">
+                        <span class="prefix">+886</span>
+                        <input type="tel" id="userPhone" placeholder="請填寫您的手機號" required pattern="[0-9]{9,10}">
+                    </div>
+                    <input type="hidden" id="fullPhone" name="entry.87654321">
                 </div>
+
                 <div style="margin-bottom: 20px; font-size: 14px; color: #ddd;">
                     註：我們將採用保密包裝，面單不顯示任何產品名稱，貨到付款，安全無憂。
                 </div>
@@ -169,16 +156,12 @@
     </div>
 </div>
 
-<a href="#order-form" id="floating-btn">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg>
-    立即搶購
-</a>
+<a href="#order-form" id="floating-btn">立即搶購</a>
 
 <script>
-    // 自動更新日期
     document.getElementById('date').innerText = new Date().toLocaleDateString();
-
-    // 簡單倒計時邏輯 (15分鐘)
+    
+    // 倒計時
     let time = 900;
     const timerDisplay = document.getElementById('countdown');
     setInterval(() => {
@@ -189,7 +172,7 @@
         if (time > 0) time--;
     }, 1000);
 
-    // 模擬滾動記錄
+    // 滾動列表
     const scrollList = document.getElementById('scroll-list');
     setInterval(() => {
         if (scrollList.children.length > 1) {
@@ -197,12 +180,37 @@
         }
     }, 3000);
 
-    // 懸浮按鈕平滑滾動邏輯
+    // 懸浮按鈕跳轉
     document.getElementById('floating-btn').addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector('#order-form').scrollIntoView({
-            behavior: 'smooth'
-        });
+        document.querySelector('#order-form').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // 表單驗證邏輯
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+        const nameInput = document.getElementById('custName');
+        const phoneInput = document.getElementById('userPhone');
+        const fullPhoneHidden = document.getElementById('fullPhone');
+        
+        // 1. 繁體中文姓名驗證 (正則表達式只允許中文字符)
+        const nameRegex = /^[\u4E00-\u9FFF·]+$/;
+        if (!nameRegex.test(nameInput.value)) {
+            alert('請輸入正確的繁體中文姓名，不可包含英文或數字。');
+            nameInput.focus();
+            e.preventDefault();
+            return false;
+        }
+
+        // 2. 電話區號合併邏輯
+        // 獲取用戶輸入，如果是以0開頭(如0912...)，則去掉開頭的0，合併為 +886912...
+        let rawPhone = phoneInput.value.trim();
+        if (rawPhone.startsWith('0')) {
+            rawPhone = rawPhone.substring(1);
+        }
+        fullPhoneHidden.value = '+886' + rawPhone;
+        
+        // 繼續提交
+        return true;
     });
 </script>
 
