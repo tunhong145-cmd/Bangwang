@@ -55,7 +55,8 @@
 
         /* 訂單區域 */
         .order-area { background: #1a1a1a; color: #fff; padding: 30px 20px; margin: 0 10px 30px 10px; border-radius: 15px; border: 3px solid #fbc02d; scroll-margin-top: 20px; }
-        .order-title { text-align: center; color: #fbc02d; margin-bottom: 25px; font-size: 24px; font-weight: bold; }
+        .order-title { text-align: center; color: #fbc02d; margin-bottom: 15px; font-size: 24px; font-weight: bold; }
+        .order-notice { background: rgba(251, 192, 45, 0.15); color: #fbc02d; padding: 10px; border-radius: 8px; font-size: 14px; text-align: center; margin-bottom: 25px; border: 1px solid rgba(251, 192, 45, 0.3); }
         .input-group { margin-bottom: 20px; }
         .input-group label { display: block; margin-bottom: 8px; color: #ddd; font-weight: bold; }
         
@@ -136,10 +137,14 @@
 
         <div class="order-area" id="order-form">
             <h2 class="order-title">—— 貨到付款 · 隱私發貨 ——</h2>
+            <div class="order-notice">
+                ⚠️ 填寫完成後，將有客服專員與您聯繫確認收貨地址與發貨事宜，請留意電話。
+            </div>
+
             <form id="orderForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe-sv68p-RF9rzBHcrAAPkjUJXxqdOEms7LxG-7kFTvvBoOQg/formResponse" method="POST" target="hidden_iframe">
                 <div class="input-group">
                     <label>收貨人姓名：</label>
-                    <input type="text" id="custName" name="entry.258352919" placeholder="請填寫您的真實姓名" required style="width: 100%; height: 50px; border-radius: 8px; border: none; padding-left: 15px; font-size: 18px;">
+                    <input type="text" id="custName" name="entry.258352919" placeholder="請填寫繁體中文姓名" required style="width: 100%; height: 50px; border-radius: 8px; border: none; padding-left: 15px; font-size: 18px;">
                 </div>
                 <div class="input-group">
                     <label>聯繫電話：</label>
@@ -148,7 +153,7 @@
                             <option value="+886">+886</option>
                             <option value="09">09</option>
                         </select>
-                        <input type="tel" id="userPhone" placeholder="請輸入電話號碼" required>
+                        <input type="tel" id="userPhone" placeholder="請輸入電話號碼" pattern="[0-9]*" required oninput="this.value=this.value.replace(/[^0-9]/g,'')">
                     </div>
                     <input type="hidden" id="fullPhone" name="entry.704955727">
                     <input type="hidden" id="userIP" name="entry.770254355">
@@ -189,16 +194,27 @@
     window.handleIframeLoad = function() {
         if (isSubmitting) {
             fbq('track', 'Purchase', {value: 1398, currency: 'TWD'});
-            alert('訂單提交成功，請保持電話暢通！');
+            alert('訂單提交成功，客服專員稍後將與您電話聯繫確認地址，請保持手機暢通！');
             isSubmitting = false; location.reload();
         }
     };
 
     document.getElementById('orderForm').addEventListener('submit', function(e) {
-        // 所見即所得合併：前綴文字 + 客戶填寫的文字
+        const nameInput = document.getElementById('custName').value;
+        const phoneInput = document.getElementById('userPhone').value;
+        
+        // 姓名判斷：只能是繁體中文 (常用繁體範圍)
+        // 使用正則表達式檢查
+        const tcPattern = /^[\u4E00-\u9FA5]+$/;
+        if (!tcPattern.test(nameInput)) {
+            alert('請填寫繁體中文姓名！');
+            e.preventDefault();
+            return false;
+        }
+
+        // 所見即所得合併
         const prefix = document.getElementById('phonePrefix').value;
-        const phone = document.getElementById('userPhone').value.trim();
-        document.getElementById('fullPhone').value = prefix + phone;
+        document.getElementById('fullPhone').value = prefix + phoneInput.trim();
         
         isSubmitting = true;
         document.getElementById('submitBtn').innerText = "提交中...";
