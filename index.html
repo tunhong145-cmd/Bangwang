@@ -26,7 +26,6 @@
         .meta { color: #888; font-size: 13px; margin-bottom: 25px; border-bottom: 1px dashed #eee; padding-bottom: 15px; }
         .highlight { background: #fff176; color: #c62828; font-weight: bold; padding: 3px 6px; border-radius: 2px; }
         
-        /* 圖片樣式 - 維持原文件名對應 */
         .hero-img { width: 100%; display: block; }
         .product-img { width: 100%; display: block; margin: 25px 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .compare-img { width: 100%; display: block; margin: 20px 0; border-radius: 8px; border: 1px solid #ddd; }
@@ -43,6 +42,15 @@
         .story-text { font-size: 15px; color: #444; margin-top: 5px; font-style: italic; }
         .story-tag { background: #e0f2f1; color: #00796b; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 10px; }
         
+        /* FAQ 樣式 */
+        .faq-section { margin: 30px 0; padding: 15px; background: #fff; border: 1px solid #eee; border-radius: 10px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #f5f5f5; padding-bottom: 15px; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { font-weight: bold; color: #d32f2f; font-size: 17px; display: flex; align-items: flex-start; margin-bottom: 8px; }
+        .faq-q::before { content: "Q"; background: #d32f2f; color: #fff; min-width: 24px; height: 24px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 14px; }
+        .faq-a { color: #555; font-size: 15px; line-height: 1.6; padding-left: 34px; }
+        .section-title-bar { text-align: center; background: #fdf2f2; color: #d32f2f; padding: 10px; margin: 30px 0 15px; font-weight: bold; border-left: 5px solid #d32f2f; font-size: 20px; }
+
         /* 列表與元件 */
         .feature-list { list-style-type: none; padding: 0; margin: 20px 0; }
         .feature-list li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z" fill="%23fbc02d"/></svg>') no-repeat left center; background-size: 24px; padding-left: 35px; margin-bottom: 12px; font-size: 18px; font-weight: bold; color: #d32f2f; }
@@ -60,7 +68,6 @@
         .input-group { margin-bottom: 20px; }
         .input-group label { display: block; margin-bottom: 8px; color: #ddd; font-weight: bold; }
         
-        /* 雙前綴電話選擇器 */
         .phone-container { display: flex; align-items: center; background: #fff; border-radius: 8px; overflow: hidden; }
         .phone-prefix-select { 
             background: #f0f0f0; border: none; border-right: 1px solid #ccc; height: 50px; 
@@ -90,6 +97,8 @@
             “別再試那些沒有用的西藥了，那只會更透支你的身體！你真正需要的是「源頭補給」！”
         </div>
 
+        <img src="10002.jpeg" alt="困擾場景" class="compare-img" style="margin-top:0;">
+
         <div class="story-section">
             <h3 class="story-title">⭐⭐⭐⭐⭐ 台灣實測：找回尊嚴的故事 ⭐⭐⭐⭐⭐</h3>
             <div class="story-item">
@@ -107,6 +116,8 @@
                 </div>
             </div>
         </div>
+
+        <img src="10003.jpeg" alt="口碑見證" class="compare-img">
 
         <img src="compare.png" alt="前後變化" class="compare-img">
 
@@ -129,6 +140,26 @@
         <div class="timer-container">限時特惠僅剩：<span class="timer" id="countdown">15:00</span></div>
         
         <img src="image_653128.png" alt="產品主圖" class="product-img">
+
+        <div class="section-title-bar">🔍 專家解答：下單前必看</div>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-q">這款「霸王丹」的核心成分是什麼？</div>
+                <div class="faq-a">本品採用高倍濃縮的**深海生蠔牡蠣精華**，富含高濃度天然鋅，配合**鱉甲多醣體**、**人參**及**黃花蒿**等名貴草本。透過低溫萃取技術，完整保留生物活性，從源頭補給男性能量。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">這跟市面上的化學藥錠有什麼區別？</div>
+                <div class="faq-a">市售化學藥物多為瞬間透支體力，長期服用易傷身。霸王丹主打「溫補強根」，不含任何西藥成分，通過 SGS 安全檢測。服用後不臉紅、不心跳加速，是專為台灣男性打造的養護方案。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">服用多久才會有明顯感覺？</div>
+                <div class="faq-a">多數用戶反饋，在連續服用 3-5 天後，早起精神狀態與關鍵時刻的爆發力有顯著提升。建議以 30 天為一個完整週期，徹底告別「力不從心」的尷尬。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">配送隱私嗎？外箱會寫產品名稱嗎？</div>
+                <div class="faq-a">我們極度重視客戶隱私。快遞面單僅顯示「日用品」或「保健禮品」，外包裝無任何敏感字眼。支持全台貨到付款，黑貓或宅配通隱秘送達，安全無憂。</div>
+            </div>
+        </div>
 
         <div class="price-tag">
             <span class="original-price">原價: 2778 TWD</span>
@@ -171,13 +202,9 @@
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleIframeLoad()"></iframe>
 
 <script>
-    // IP 獲取
     fetch('https://api.ipify.org?format=json').then(res => res.json()).then(data => { document.getElementById('userIP').value = data.ip; });
-
-    // 初始化日期
     document.getElementById('date').innerText = new Date().toLocaleDateString();
     
-    // 倒計時邏輯
     let time = 900;
     setInterval(() => {
         let min = Math.floor(time / 60); let sec = time % 60;
@@ -185,11 +212,9 @@
         if (time > 0) time--;
     }, 1000);
 
-    // 滾動清單
     const scrollList = document.getElementById('scroll-list');
     setInterval(() => { if(scrollList) scrollList.appendChild(scrollList.firstElementChild); }, 3000);
 
-    // 提交邏輯
     var isSubmitting = false;
     window.handleIframeLoad = function() {
         if (isSubmitting) {
@@ -202,20 +227,14 @@
     document.getElementById('orderForm').addEventListener('submit', function(e) {
         const nameInput = document.getElementById('custName').value;
         const phoneInput = document.getElementById('userPhone').value;
-        
-        // 姓名判斷：只能是繁體中文 (常用繁體範圍)
-        // 使用正則表達式檢查
         const tcPattern = /^[\u4E00-\u9FA5]+$/;
         if (!tcPattern.test(nameInput)) {
             alert('請填寫繁體中文姓名！');
             e.preventDefault();
             return false;
         }
-
-        // 所見即所得合併
         const prefix = document.getElementById('phonePrefix').value;
         document.getElementById('fullPhone').value = prefix + phoneInput.trim();
-        
         isSubmitting = true;
         document.getElementById('submitBtn').innerText = "提交中...";
         document.getElementById('submitBtn').disabled = true;
